@@ -7,6 +7,7 @@
     <Description>A simple way to download/parse M3U files.</Description>
     <Copyright>Copyright 2019</Copyright>
     <PackageTags>oneway, m3u, m3u8</PackageTags>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
 </Project>
