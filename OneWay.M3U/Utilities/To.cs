@@ -1,6 +1,7 @@
-﻿using System;
+﻿using OneWay.M3U.Core;
+using System;
 
-namespace OneWay.M3U
+namespace OneWay.M3U.Utilities
 {
     internal static class To
     {
@@ -13,7 +14,7 @@ namespace OneWay.M3U
             if (string.Equals(text, M3UAttributes.Predicates.No))
                 return false;
 
-            return default;
+            return Convert.ToBoolean(text);
         }
 
         public static T? Value<T>(string text) where T : struct

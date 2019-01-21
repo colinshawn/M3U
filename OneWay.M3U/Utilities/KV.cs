@@ -1,7 +1,8 @@
-﻿using System;
+﻿using OneWay.M3U.Core;
+using System;
 using Pair = System.Collections.Generic.KeyValuePair<string, string>;
 
-namespace OneWay.M3U
+namespace OneWay.M3U.Utilities
 {
     internal static class KV
     {

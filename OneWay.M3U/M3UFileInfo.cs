@@ -16,7 +16,6 @@ namespace OneWay.M3U
 
         public bool? AllowCache { get; set; }
         
-        /// <see cref="M3UAttributes.PlaylistTypes"/>
         public string PlaylistType { get; set; }
 
         public DateTime? ProgramDateTime { get; set; }

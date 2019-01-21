@@ -4,10 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Colin Shawn</Authors>
     <Company>OneWay</Company>
-    <Description>A simple way to download/parse M3U files.</Description>
+    <Description>A simple way to parse M3U files.</Description>
     <Copyright>Copyright 2019</Copyright>
-    <PackageTags>oneway, m3u, m3u8</PackageTags>
+    <PackageTags>m3u, m3u8, hls, oneway</PackageTags>
     <LangVersion>7.1</LangVersion>
+    <FileVersion>1.0.0.4</FileVersion>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <Version>1.0.4</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Colin\projects\M3U\OneWay.M3U\OneWay.M3U.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
 </Project>

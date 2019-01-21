@@ -1,4 +1,4 @@
-﻿namespace OneWay.M3U
+﻿namespace OneWay.M3U.Core
 {
     internal static class M3UAttributes
     {

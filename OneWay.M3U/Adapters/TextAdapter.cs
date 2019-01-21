@@ -3,14 +3,14 @@ using System.IO;
 
 namespace OneWay.M3U.Adapters
 {
-    internal class TextAdapter : IAdapter
+    internal class TextAdapter : Adapter, IAdapter
     {
-        public string Content { get; private set; }
+        public string Text { get; private set; }
 
-        public TextAdapter(string content) =>
-            this.Content = content ?? throw new ArgumentNullException(nameof(content));
+        public TextAdapter(string text) =>
+            Text = text ?? throw new ArgumentNullException(nameof(text));
 
-        public Stream Access() =>
-            new MemoryStream(Configuration.Default.Encoding.GetBytes(this.Content), writable: false);
+        protected override Stream CreateStream() =>
+            new MemoryStream(Configuration.Default.Encoding.GetBytes(Text), writable: false);
     }
 }

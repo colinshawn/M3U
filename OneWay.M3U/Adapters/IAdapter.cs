@@ -1,9 +1,12 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace OneWay.M3U.Adapters
 {
-    internal interface IAdapter
+    internal interface IAdapter : IDisposable
     {
-        Stream Access();
+        bool IsConnected { get; }
+
+        Stream Connect();
     }
 }

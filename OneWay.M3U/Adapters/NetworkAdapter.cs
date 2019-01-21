@@ -4,30 +4,33 @@ using System.Net;
 
 namespace OneWay.M3U.Adapters
 {
-    internal class NetworkAdapter : IAdapter
+    internal class NetworkAdapter : Adapter, IAdapter
     {
-        public string Url { get; private set; }
+        public Uri Uri { get; private set; }
 
-        public NetworkAdapter(string url) =>
-            this.Url = url ?? throw new ArgumentNullException(nameof(url));
-
-        private static HttpWebRequest CreateHttp(string url)
+        public NetworkAdapter(string uriString)
+            : this(new Uri(uriString ?? throw new ArgumentNullException(nameof(uriString)), UriKind.Absolute))
         {
-            var request = WebRequest.CreateHttp(url);
+        }
+
+        public NetworkAdapter(Uri uri)
+        {
+            Uri = uri ?? throw new ArgumentNullException(nameof(uri));
+
+            if (!Uri.IsAbsoluteUri)
+                throw new UriFormatException("Invalid URI string. Required an absolute URI.");
+        }
+
+        protected override Stream CreateStream()
+        {
+            var request = WebRequest.CreateHttp(Uri);
             request.Method = WebRequestMethods.Http.Get;
             request.UserAgent = Configuration.Default.UserAgent;
             request.Timeout = Configuration.Default.RequestTimeout;
 
-            return request;
-        }
-
-        private static Stream GetResponseStream(WebRequest request)
-        {
             var response = request.GetResponse();
 
             return response.GetResponseStream();
         }
-
-        public Stream Access() => GetResponseStream(CreateHttp(this.Url));
     }
 }

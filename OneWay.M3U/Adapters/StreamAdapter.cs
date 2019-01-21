@@ -3,13 +3,13 @@ using System.IO;
 
 namespace OneWay.M3U.Adapters
 {
-    internal class StreamAdapter : IAdapter
+    internal class StreamAdapter : Adapter, IAdapter
     {
-        public Stream Source { get; private set; }
+        public new Stream Stream => base.Stream;
 
-        public StreamAdapter(Stream source) =>
-            this.Source = source ?? throw new ArgumentNullException(nameof(source));
+        public StreamAdapter(Stream stream) =>
+            base.Stream = stream ?? throw new ArgumentNullException(nameof(stream));
 
-        public Stream Access() => this.Source;
+        protected override Stream CreateStream() => Stream;
     }
 }

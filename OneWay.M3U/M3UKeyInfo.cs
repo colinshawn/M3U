@@ -4,7 +4,6 @@ namespace OneWay.M3U
 {
     public class M3UKeyInfo
     {
-        /// <see cref="M3UAttributes.EncryptionMethods"/>
         public string Method { get; set; }
 
         public Uri Uri { get; set; }

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OneWay.M3U</name>
+    </assembly>
+    <members>
+        <member name="T:OneWay.M3U.M3UFileInfo">
+            <summary>
+             See https://tools.ietf.org/html/rfc8216
+            </summary>
+        </member>
+    </members>
+</doc>
