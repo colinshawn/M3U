@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneWay.M3U", "OneWay.M3U\OneWay.M3U.csproj", "{3C65795E-D88C-462E-901A-63801D326C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U", "OneWay.M3U\OneWay.M3U.csproj", "{3C65795E-D88C-462E-901A-63801D326C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneWay.M3U.UnitTest", "OneWay.M3U.UnitTest\OneWay.M3U.UnitTest.csproj", "{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U.UnitTest", "OneWay.M3U.UnitTest\OneWay.M3U.UnitTest.csproj", "{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34D416D4-1AC8-4860-B3D6-D9145C4570B0}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

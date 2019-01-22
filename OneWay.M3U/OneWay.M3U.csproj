@@ -8,13 +8,13 @@
     <Copyright>Copyright 2019</Copyright>
     <PackageTags>m3u, m3u8, hls, oneway</PackageTags>
     <LangVersion>7.1</LangVersion>
-    <FileVersion>1.0.0.4</FileVersion>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <Version>1.0.4</Version>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\Colin\projects\M3U\OneWay.M3U\OneWay.M3U.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 

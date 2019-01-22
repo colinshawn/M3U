@@ -4,6 +4,9 @@
         <name>OneWay.M3U</name>
     </assembly>
     <members>
+        <member name="M:OneWay.M3U.AttributeReaders.IAttributeReader.Read(OneWay.M3U.Core.LineReader,OneWay.M3U.M3UFileInfo)">
+            <returns>Indicates whether to terminate.</returns>
+        </member>
         <member name="T:OneWay.M3U.M3UFileInfo">
             <summary>
              See https://tools.ietf.org/html/rfc8216
