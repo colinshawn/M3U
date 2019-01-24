@@ -8,11 +8,12 @@
     <Copyright>Copyright 2019</Copyright>
     <PackageTags>m3u, m3u8, hls, oneway</PackageTags>
     <LangVersion>7.1</LangVersion>
-    <FileVersion>1.0.0.2</FileVersion>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes>- Add usage examples in README.md file.</PackageReleaseNotes>
+    <FileVersion>1.0.0.3</FileVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes>- Add usage examples in readme.txt file.</PackageReleaseNotes>
     <PackageId>OneWay.M3U</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -25,13 +26,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="README.md" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="README.md">
+    <None Update="readme.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
 
 </Project>

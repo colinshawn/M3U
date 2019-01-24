@@ -1,31 +1,20 @@
-# OneWay.M3U
+Usage examples:
 
-A simple way to parse M3U files.
-
-## Usage
-
-#### Read from file
-
-```csharp
 M3UFileInfo m3uFile;
+
+// read from file
 var file = new FileInfo("example.m3u");
 using (var reader = new M3UFileReader(file))
     m3uFile = reader.Read();
-```
 
-#### Read from stream
 
-```csharp
-M3UFileInfo m3uFile;
+// read from stream
 var fs = File.OpenRead("example.m3u");
 using (var reader = new M3UFileReader(fs))
     m3uFile = reader.Read();
-```
 
-#### Read from text
 
-```csharp
-M3UFileInfo m3uFile;
+// read from text
 // set the base URI if only specified the name in M3U file
 Configuration.Default.BaseUri = new Uri("http://example.com", UriKind.Absolute);
 var text = @"#EXTM3U
@@ -45,14 +34,10 @@ using (var reader = new M3UFileReader(text))
 // http://example.com/mid.m3u8
 // http://example.com/hi.m3u8
 // http://example.com/audio-only.m3u8
-```
 
-#### Read from URI
 
-```csharp
-M3UFileInfo m3uFile;
+// read from URI:
 // if the following URI contains the same text as above, I will use it as the base URI
 var uri = new Uri("http://example.com/example.m3u");
 using (var reader = new M3UFileReader(uri))
     m3uFile = reader.Read();
-```

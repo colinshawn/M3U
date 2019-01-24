@@ -48,7 +48,7 @@ namespace OneWay.M3U.UnitTest
             var uri = new Uri(Url);
             using (var reader = new M3UFileReader(uri))
                 m3uFile = reader.Read();
-
+            
             Assert.IsNotNull(m3uFile);
             Assert.IsNotNull(m3uFile.MediaFiles);
             Assert.IsTrue(m3uFile.MediaFiles.Count > 0);
