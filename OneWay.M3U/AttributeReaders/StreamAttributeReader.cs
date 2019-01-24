@@ -1,4 +1,5 @@
-﻿using OneWay.M3U.Core;
+﻿using OneWay.M3U.Adapters;
+using OneWay.M3U.Core;
 using OneWay.M3U.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,13 +47,25 @@ namespace OneWay.M3U.AttributeReaders
             if (!reader.MoveNext())
                 throw new InvalidDataException("Invalid M3U file. Missing a stream URI.");
 
-            var streamUri = new Uri(reader.Current, UriKind.RelativeOrAbsolute);
+            var streamUri = new Uri(reader.Current.Trim(), UriKind.RelativeOrAbsolute);
             if (!streamUri.IsAbsoluteUri && !streamUri.IsWellFormedOriginalString())
                 throw new InvalidDataException("Invalid M3U file. Include a invalid stream URI.",
                     innerException: new UriFormatException(reader.Current));
 
-            stream.Uri = true == Configuration.Default.BaseUri?.IsAbsoluteUri && !streamUri.IsAbsoluteUri ?
-                new Uri(Configuration.Default.BaseUri, streamUri) : streamUri;
+            if (!streamUri.IsAbsoluteUri)
+            {
+                var baseUri = Configuration.Default.BaseUri;
+                if (baseUri == null && reader.Adapter is NetworkAdapter adapter)
+                {
+                    var uri = adapter.Uri;
+                    var components = UriComponents.SchemeAndServer | UriComponents.UserInfo;
+                    baseUri = new Uri(uri.GetComponents(components, UriFormat.SafeUnescaped), UriKind.Absolute);
+                }
+                if (baseUri != null)
+                    stream.Uri = new Uri(baseUri, streamUri);
+            }
+            if (stream.Uri == null)
+                stream.Uri = streamUri;
 
             fileInfo.Streams.Add(stream);
         }

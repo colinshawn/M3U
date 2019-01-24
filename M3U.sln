@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U.UnitTest", "OneW
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34D416D4-1AC8-4860-B3D6-D9145C4570B0}"
 	ProjectSection(SolutionItems) = preProject
-		Readme.md = Readme.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

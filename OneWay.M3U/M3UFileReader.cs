@@ -26,11 +26,11 @@ namespace OneWay.M3U
         public M3UFileReader(string text) : this() =>
             adapter = new TextAdapter(text);
 
-        public M3UFileReader(Uri uri) : this() =>
-            adapter = new NetworkAdapter(uri);
-
         public M3UFileReader(Stream stream) : this() =>
             adapter = new StreamAdapter(stream);
+
+        public M3UFileReader(Uri uri) : this() =>
+            adapter = new NetworkAdapter(uri);
 
         private static IReadOnlyList<IAttributeReader> InitAttributeReaders() =>
             new List<IAttributeReader>()

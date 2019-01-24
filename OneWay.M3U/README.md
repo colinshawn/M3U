@@ -1,12 +1,6 @@
-# OneWay.M3U [![version][nuget-version]][nuget-url]
+# OneWay.M3U
 
 A simple way to parse M3U files.
-
-## Install
-
-```shell
-Install-Package OneWay.M3U
-```
 
 ## Usage
 
@@ -62,6 +56,3 @@ var uri = new Uri("http://example.com/example.m3u");
 using (var reader = new M3UFileReader(uri))
     m3uFile = reader.Read();
 ```
-
-[nuget-url]: https://www.nuget.org/packages/OneWay.M3U
-[nuget-version]: https://img.shields.io/nuget/v/OneWay.M3U.svg

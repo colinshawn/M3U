@@ -12,7 +12,7 @@ namespace OneWay.M3U.UnitTest
 
         public M3UFileReaderUnitTest()
         {
-            Configuration.Default.BaseUri = new Uri("https://media-qncdn.ruguoapp.com/", UriKind.Absolute);
+            //Configuration.Default.BaseUri = new Uri("https://media-qncdn.ruguoapp.com/", UriKind.Absolute);
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace OneWay.M3U.UnitTest
         public void TestStream()
         {
             M3UFileInfo m3uFile;
-            var fs = File.Open(FileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+            var fs = File.OpenRead(FileName);
             using (var reader = new M3UFileReader(fs))
                 m3uFile = reader.Read();
 
@@ -58,15 +58,16 @@ namespace OneWay.M3U.UnitTest
         public void TestText()
         {
             M3UFileInfo m3uFile;
+            Configuration.Default.BaseUri = new Uri("http://example.com", UriKind.Absolute);
             var text = @"#EXTM3U
             #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1280000
-            http://example.com/low.m3u8
+            low.m3u8
             #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
             http://example.com/mid.m3u8
             #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=7680000
-            http://example.com/hi.m3u8
+            hi.m3u8
             #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=65000,CODECS=""mp4a.40.5""
-            http://example.com/audio-only.m3u8
+            audio-only.m3u8
              ";
             using (var reader = new M3UFileReader(text))
                 m3uFile = reader.Read();

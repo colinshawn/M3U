@@ -9,6 +9,8 @@ namespace OneWay.M3U.Core
     {
         private readonly StreamReader reader;
 
+        public IAdapter Adapter { get; private set; }
+
         public string Current { get; private set; }
 
         object IEnumerator.Current => Current;
@@ -18,7 +20,7 @@ namespace OneWay.M3U.Core
         }
 
         public LineReader(IAdapter adapter) =>
-             reader = new StreamReader(adapter.Connect());
+             reader = new StreamReader((Adapter = adapter).Connect());
 
         public void Dispose() => reader.Dispose();
 
