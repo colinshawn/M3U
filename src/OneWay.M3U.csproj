@@ -5,7 +5,7 @@
     <Authors>Colin Shawn</Authors>
     <Company>OneWay</Company>
     <Description>A simple way to parse M3U files.</Description>
-    <Copyright>Copyright 2019</Copyright>
+    <Copyright>Copyright © Colin Shawn 2019</Copyright>
     <PackageTags>m3u, m3u8, hls, oneway</PackageTags>
     <LangVersion>7.1</LangVersion>
     <FileVersion>1.0.0.3</FileVersion>
@@ -13,7 +13,12 @@
     <Version>1.0.3</Version>
     <PackageReleaseNotes>- Add usage examples in readme.txt file.</PackageReleaseNotes>
     <PackageId>OneWay.M3U</PackageId>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/colinshawn/M3U</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/colinshawn/M3U/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/colinshawn/M3U</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
