@@ -1,4 +1,4 @@
-# OneWay.M3U [![version][nuget-version]][nuget-url]
+# OneWay.M3U [![version][nuget-version]][nuget-url] [![license][license]][license-url]
 
 A simple way to parse M3U files.
 
@@ -65,3 +65,6 @@ using (var reader = new M3UFileReader(uri))
 
 [nuget-url]: https://www.nuget.org/packages/OneWay.M3U
 [nuget-version]: https://img.shields.io/nuget/v/OneWay.M3U.svg
+
+[license-url]: https://github.com/colinshawn/M3U/blob/master/LICENSE
+[license]: https://img.shields.io/github/license/colinshawn/M3U.svg

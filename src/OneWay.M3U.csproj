@@ -13,16 +13,18 @@
     <Version>1.0.3</Version>
     <PackageReleaseNotes>- Add usage examples in readme.txt file.</PackageReleaseNotes>
     <PackageId>OneWay.M3U</PackageId>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile></DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
+    <OutputPath>..\bin\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>..\bin\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,12 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U", "OneWay.M3U\OneWay.M3U.csproj", "{3C65795E-D88C-462E-901A-63801D326C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U.UnitTest", "test\OneWay.M3U.UnitTest.csproj", "{2C8D568C-1086-4104-B288-8B39400E2468}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U.UnitTest", "OneWay.M3U.UnitTest\OneWay.M3U.UnitTest.csproj", "{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWay.M3U", "src\OneWay.M3U.csproj", "{611E1E05-9EB6-4882-AE49-B0699EE018B6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34D416D4-1AC8-4860-B3D6-D9145C4570B0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{493A0CDB-3487-44C0-92BE-2F2B7F7CD842}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -18,14 +21,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C65795E-D88C-462E-901A-63801D326C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C65795E-D88C-462E-901A-63801D326C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C65795E-D88C-462E-901A-63801D326C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C65795E-D88C-462E-901A-63801D326C7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76F81B3E-5F27-40ED-8CAA-785D70A0C7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8D568C-1086-4104-B288-8B39400E2468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8D568C-1086-4104-B288-8B39400E2468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8D568C-1086-4104-B288-8B39400E2468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8D568C-1086-4104-B288-8B39400E2468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611E1E05-9EB6-4882-AE49-B0699EE018B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611E1E05-9EB6-4882-AE49-B0699EE018B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611E1E05-9EB6-4882-AE49-B0699EE018B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611E1E05-9EB6-4882-AE49-B0699EE018B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
