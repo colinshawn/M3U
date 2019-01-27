@@ -4,6 +4,7 @@ using OneWay.M3U.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace OneWay.M3U
 {
@@ -17,7 +18,7 @@ namespace OneWay.M3U
 
         private M3UFileReader()
         {
-            attributeReaders = InitAttributeReaders();
+            attributeReaders = LoadAttributeReaders();
         }
 
         public M3UFileReader(FileInfo file) : this() =>
@@ -32,20 +33,16 @@ namespace OneWay.M3U
         public M3UFileReader(Uri uri) : this() =>
             adapter = new NetworkAdapter(uri);
 
-        private static IReadOnlyList<IAttributeReader> InitAttributeReaders() =>
-            new List<IAttributeReader>()
-            {
-                new EndListAttributeReader(),
-                new DurationAttributeReader(),
-                new AllowCacheAttributeReader(),
-                new KeyAttributeReader(),
-                new MediaAttributeReader(),
-                new PlaylistTypeAttributeReader(),
-                new ProgramDateTimeAttributeReader(),
-                new SequenceAttributeReader(),
-                new StreamAttributeReader(),
-                new VersionAttributeReader(),
-            };
+        private static IReadOnlyList<IAttributeReader> LoadAttributeReaders()
+        {
+            var tReader = typeof(IAttributeReader);
+            var definedTypes = tReader.Assembly.DefinedTypes;
+            return definedTypes
+                        .Where(e => tReader.IsAssignableFrom(e) && e.IsClass && !e.IsAbstract)
+                        .Select(Activator.CreateInstance)
+                        .Cast<IAttributeReader>()
+                        .ToList();
+        }
 
         public void Dispose() => adapter?.Dispose();
 
